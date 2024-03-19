@@ -27,4 +27,15 @@ public class CustomerServiceImpl implements CustomerService {
     public Customer addCustomer(Customer customer) {
         return customerRepository.save(customer);
     }
+
+    @Override
+    public Customer updateCustomer(Customer customer) {
+        if (customerRepository.existsById(customer.getId())) {
+            return customerRepository.save(customer);
+        } else {
+            System.out.println("Customer id is not available this id: " + customer.getId());
+        }
+
+        return customer;
+    }
 }

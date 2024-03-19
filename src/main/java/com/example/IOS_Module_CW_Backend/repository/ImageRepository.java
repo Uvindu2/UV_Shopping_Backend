@@ -1,12 +1,12 @@
 package com.example.IOS_Module_CW_Backend.repository;
 
 import com.example.IOS_Module_CW_Backend.model.Customer;
+import com.example.IOS_Module_CW_Backend.model.Image;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
-@Repository
-public interface CustomerRepository extends JpaRepository<Customer, Long> {
-    Optional<Customer> findCustomerByName(String name);
+public interface ImageRepository extends JpaRepository<Image, Long> {
+    List<Image> findAllByProductId(Long productId);
 }

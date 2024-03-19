@@ -16,9 +16,6 @@ public class Customer {
     @Column(name = "customer_name")
     private String name;
 
-    @Column(name = "username")
-    private String username;
-
     @Column(name = "address")
     private String address;
 
