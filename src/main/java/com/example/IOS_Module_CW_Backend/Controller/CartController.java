@@ -15,13 +15,13 @@ public class CartController {
     private CartService cartService;
 
     @GetMapping("/all")
-    public List<Cart> findAllProducts() {
+    public List<Cart> findAllCart() {
         return cartService.fetchAllCartDetails();
     }
 
     @GetMapping("/findByCusName/{customerName}")
-    public Optional<Cart> findByCustomerName(@PathVariable String customerName) {
-        return cartService.findByCustomerName(customerName);
+    public List<Cart> findCartByCustomerName(@PathVariable String customerName) {
+        return cartService.findCartByCustomerName(customerName);
     }
 
     @PostMapping("/add")
@@ -34,8 +34,8 @@ public class CartController {
         return cartService.updateCartById(cart);
     }
 
-    @DeleteMapping("/delete")
-    public String deleteCart(@RequestBody Long cartId) {
+    @DeleteMapping("/delete/{cartId}")
+    public String deleteCartById(@PathVariable Long cartId) {
         return cartService.deleteCartById(cartId);
     }
 

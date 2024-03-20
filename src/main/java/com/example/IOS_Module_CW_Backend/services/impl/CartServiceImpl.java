@@ -7,6 +7,7 @@ import com.example.IOS_Module_CW_Backend.repository.CustomerRepository;
 import com.example.IOS_Module_CW_Backend.services.CartService;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,9 +27,13 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public Optional<Cart> findByCustomerName(String customerName) {
+    public List<Cart> findCartByCustomerName(String customerName) {
         Optional<Customer> customer = customerRepository.findCustomerByName(customerName);
-        return cartRepository.findById(customer.get().getId());
+        if (customer.isPresent()) {
+            return cartRepository.findAllByUserId(customer.get().getId());
+        } else {
+            return Collections.emptyList();
+        }
     }
 
     @Override

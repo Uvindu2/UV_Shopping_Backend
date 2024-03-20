@@ -9,7 +9,7 @@ public interface CartService {
 
     List<Cart> fetchAllCartDetails();
 
-    Optional<Cart> findByCustomerName(String customerName);
+    List<Cart> findCartByCustomerName(String customerName);
 
     Cart addCart(Cart cart);
 

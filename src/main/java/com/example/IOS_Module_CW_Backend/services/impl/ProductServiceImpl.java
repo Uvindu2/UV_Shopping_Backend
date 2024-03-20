@@ -50,12 +50,22 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Optional<Product> findByProductId(Long productId) {
+    public Optional<Product> findProductById(Long productId) {
         return productRepository.findById(productId);
     }
 
     @Override
     public Product addProduct(Product product) {
         return productRepository.save(product);
+    }
+
+    @Override
+    public Product updateProduct(Product product) {
+        if (productRepository.existsById(product.getId())) {
+            return productRepository.save(product);
+        } else {
+            System.out.println("Customer id is not available this id: " + product.getId());
+        }
+        return product;
     }
 }
