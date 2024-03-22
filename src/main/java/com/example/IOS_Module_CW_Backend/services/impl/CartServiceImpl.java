@@ -27,8 +27,8 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public List<Cart> findCartByCustomerName(String customerName) {
-        Optional<Customer> customer = customerRepository.findCustomerByName(customerName);
+    public List<Cart> findCartByCustomerName(String username) {
+        Optional<Customer> customer = customerRepository.findCustomerByUsername(username);
         if (customer.isPresent()) {
             return cartRepository.findAllByUserId(customer.get().getId());
         } else {

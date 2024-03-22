@@ -15,4 +15,8 @@ public interface ProductService {
 
     Product updateProduct(Product product);
 
+    List<Product> fetchByProductCategory(String product_category);
+
+    List<Product> fetchAllByProductPrice(Double start_price, Double end_price);
+
 }

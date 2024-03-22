@@ -35,4 +35,14 @@ public class ProductController {
     public Product updateProductById(@RequestBody Product product) {
         return productService.updateProduct(product);
     }
+
+    @GetMapping("/fetchAllByProductCategory/{product_category}")
+    public List<Product> fetchByProductCategory(@PathVariable String product_category) {
+        return productService.fetchByProductCategory(product_category);
+    }
+
+    @GetMapping("/fetchAllByProductPrice{start_Price}/{end_price}")
+    public List<Product> fetchAllByProductPrice(@PathVariable Double start_Price,Double end_price) {
+        return productService.fetchAllByProductPrice(start_Price,end_price);
+    }
 }

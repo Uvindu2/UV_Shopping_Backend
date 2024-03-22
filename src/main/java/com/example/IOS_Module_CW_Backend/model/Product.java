@@ -7,10 +7,11 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @Entity(name = "product")
-public class Product {    @Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-@Column(name = "id")
-private Long id;
+public class Product {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
 
     @Column(name = "product_name")
     private String name;
@@ -22,7 +23,7 @@ private Long id;
     private String size;
 
     @Column(name = "price")
-    private String price;
+    private Double price;
 
     @Column(name = "color")
     private String color;

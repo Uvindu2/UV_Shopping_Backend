@@ -20,7 +20,7 @@ public class ProductDTO {
 
     private String size;
 
-    private String price;
+    private Double price;
 
     private String color;
 

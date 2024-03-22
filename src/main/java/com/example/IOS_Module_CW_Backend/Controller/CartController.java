@@ -19,9 +19,9 @@ public class CartController {
         return cartService.fetchAllCartDetails();
     }
 
-    @GetMapping("/findByCusName/{customerName}")
-    public List<Cart> findCartByCustomerName(@PathVariable String customerName) {
-        return cartService.findCartByCustomerName(customerName);
+    @GetMapping("/findByUserName/{username}")
+    public List<Cart> findCartByCustomerName(@PathVariable String username) {
+        return cartService.findCartByCustomerName(username);
     }
 
     @PostMapping("/add")

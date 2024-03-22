@@ -34,7 +34,7 @@ public class ProductServiceImpl implements ProductService {
             String productName = product.getName();
             String productDescription = product.getDescription();
             String productSize = product.getSize();
-            String productPrice = product.getPrice();
+            Double productPrice = product.getPrice();
             String productColour = product.getColor();
 
             List<Image> images = imageRepository.findAllByProductId(productId);
@@ -67,5 +67,15 @@ public class ProductServiceImpl implements ProductService {
             System.out.println("Customer id is not available this id: " + product.getId());
         }
         return product;
+    }
+
+    @Override
+    public List<Product> fetchByProductCategory(String product_category) {
+        return productRepository.findProductsByCategory(product_category);
+    }
+
+    @Override
+    public List<Product> fetchAllByProductPrice(Double start_price, Double end_price) {
+        return productRepository.findByPriceBetween(start_price,end_price);
     }
 }

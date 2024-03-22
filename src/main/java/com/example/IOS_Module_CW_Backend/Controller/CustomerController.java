@@ -19,9 +19,9 @@ public class CustomerController {
         return customerService.allCustomer();
     }
 
-    @GetMapping("/findByCusName/{customerName}")
-    public Optional<Customer> findByUserName(@PathVariable String customerName) {
-        return customerService.findByUserName(customerName);
+    @GetMapping("/findByUserName/{username}")
+    public Optional<Customer> findByUserName(@PathVariable String username) {
+        return customerService.findByUserName(username);
     }
 
     @PostMapping("/add")
