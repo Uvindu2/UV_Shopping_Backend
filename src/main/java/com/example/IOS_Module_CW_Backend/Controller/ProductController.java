@@ -17,7 +17,7 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping("/all")
-    public List<ProductDTO> findAllProducts() {
+    public List<Product> findAllProducts() {
         return productService.fetchAllProducts();
     }
 

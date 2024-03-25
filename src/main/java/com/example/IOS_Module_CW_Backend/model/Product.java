@@ -31,4 +31,7 @@ public class Product {
     @Column(name = "category")
     private String category;
 
+    @Column(name = "image_url")
+    private String imageUrl;
+
 }

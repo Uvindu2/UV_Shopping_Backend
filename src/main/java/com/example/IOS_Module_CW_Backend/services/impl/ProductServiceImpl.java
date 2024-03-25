@@ -25,28 +25,8 @@ public class ProductServiceImpl implements ProductService {
 
     //under function replace by your own
     @Override
-    public List<ProductDTO> fetchAllProducts() {
-        List<Product> productList = productRepository.findAll();
-        List<ProductDTO> productDTOList = new ArrayList<>();
-
-        for (Product product : productList) {
-            Long productId = product.getId();
-            String productName = product.getName();
-            String productDescription = product.getDescription();
-            String productSize = product.getSize();
-            Double productPrice = product.getPrice();
-            String productColour = product.getColor();
-
-            List<Image> images = imageRepository.findAllByProductId(productId);
-            List<ImageDTO> imageDTOList = new ArrayList<>();
-            for (Image image : images) {
-                Long imageId = image.getId();
-                String imageUrl = image.getUrl();
-                imageDTOList.add(new ImageDTO(imageId, imageUrl));
-            }
-            productDTOList.add(new ProductDTO(productId, productName, productDescription, productSize, productPrice, productColour, imageDTOList));
-        }
-        return productDTOList;
+    public List<Product> fetchAllProducts() {
+         return productRepository.findAll();
     }
 
     @Override
