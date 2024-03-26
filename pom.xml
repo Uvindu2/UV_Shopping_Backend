@@ -13,10 +13,9 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>IOS_Module_CW_Backend</name>
 	<description>This is use for NIBM university IOS Module Cw</description>
-<properties>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-</properties>
+	<properties>
+		<java.version>11</java.version>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
